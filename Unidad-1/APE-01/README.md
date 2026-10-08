@@ -77,10 +77,10 @@ El programa imprime en consola la tabla de resultados (H, N, Tf, índice I y est
 ## 6. Información Adicional
 
 ### Tabla de Resultados
-![Tabla de resultados](img/tabla_resultados.png)
+![Tabla de resultados](img/img-tabla.png)
 
 ### Gráfica del Índice de Lluvia
-![Gráfica del índice](img/grafica_indice.png)
+![Gráfica del índice](img/img-grafica.png)
 
 ---
 
