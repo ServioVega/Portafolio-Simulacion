@@ -1,61 +1,115 @@
-APE-02: Comparacion de Modelos de Crecimiento Poblacional
+# APE-02: Comparación de Modelos de Crecimiento Poblacional
 
-Comparacion de modelos deterministas, estocasticos, discretos y continuos
+> **Comparación de modelos deterministas, estocásticos, discretos y continuos.**
+> 
+> **Asignatura:** Simulación | **Ciclo:** 5 | **Facultad:** FEIRNNR
 
-Asignatura: Simulacion | Ciclo 5 | FEIRNNR
-1. Descripcion del Proyecto
+---
 
-Sistema que compara cuatro paradigmas de simulacion aplicados al crecimientopoblacional, usando como entrada la serie observada:
+## 1. Descripción del Proyecto
 
-datos = [1000, 1100, 1250, 1400, 1600, 1850, 2100]
+Este sistema compara cuatro paradigmas de simulación aplicados al crecimiento poblacional, utilizando como entrada la siguiente serie observada:
 
-De esa serie se derivan los parametros: P0 = 1000 (primer dato) y la tasa decrecimiento r = 0.1318 (promedio de las tasas observadas). Los cuatro modelos:
-Modelo	Ecuacion	Caracteristica
-Deterministico	P(t) = P0 * e^(r*t)	Sin aleatoriedad
-Discreto	P[k+1] = P[k] + r * P[k]	Cambios por periodos
-Estocastico	P[k+1] = P[k] + r*P[k] + ruido	Ruido N(0, sigma)
-Continuo (Euler)	P[i+1] = P[i] + dt * r * P[i]	Aproximacion numerica
+`datos = [1000, 1100, 1250, 1400, 1600, 1850, 2100]`
 
-El proyecto sigue el patron Modelo-Vista-Controlador (MVC): el modelo contienelos cuatro modelos matematicos, la vista muestra la tabla comparativa y lagrafica, y el controlador coordina ambos.
-2. Tecnologias Utilizadas
+De esta serie se derivan los parámetros iniciales: 
+* $P_0 = 1000$ (primer dato).
+* Tasa de crecimiento $r = 0.1318$ (promedio de las tasas observadas).
 
-    Python 3: lenguaje principal
-    NumPy: calculo numerico y generacion de numeros aleatorios
-    Matplotlib: grafica comparativa
+### Modelos Evaluados
 
-Este proyecto no maneja credenciales, claves ni contrasenas.
-3. Instalacion
+| Modelo | Ecuación | Característica |
+| :--- | :--- | :--- |
+| **Determinístico** | $P(t) = P_0 \cdot e^{rt}$ | Sin aleatoriedad |
+| **Discreto** | $P_{k+1} = P_k + r \cdot P_k$ | Cambios por periodos definidos |
+| **Estocástico** | $P_{k+1} = P_k + r \cdot P_k + \text{ruido}$ | Ruido distribuido normalmente $N(0, \sigma)$ |
+| **Continuo (Euler)** | $P_{i+1} = P_i + dt \cdot r \cdot P_i$ | Aproximación numérica |
 
-cd Codigo/APE2_Simulacionpython3 -m venv venvsource venv/bin/activatepip install -r requirements.txt
+El proyecto sigue el patrón de diseño **Modelo-Vista-Controlador (MVC)**: 
+* **Modelo:** Contiene la lógica de los cuatro modelos matemáticos.
+* **Vista:** Muestra la tabla comparativa y la gráfica.
+* **Controlador:** Coordina la interacción entre el modelo y la vista.
 
-4. Ejecucion / Modo de Uso
+---
 
-Con el entorno virtual activo:
+## 2. Tecnologías Utilizadas
 
+* **Python 3:** Lenguaje de programación principal.
+* **NumPy:** Cálculo numérico y generación de números aleatorios.
+* **Matplotlib:** Generación de gráficas comparativas.
+
+*Nota: Este proyecto no maneja credenciales, claves ni contraseñas.*
+
+---
+
+## 3. Instalación
+
+Para ejecutar este proyecto de forma aislada, se recomienda usar un entorno virtual. Ejecuta los siguientes comandos en tu terminal:
+
+```bash
+# Navegar al directorio del código
+cd Codigo/APE2_Simulacion
+
+# Crear entorno virtual
+python3 -m venv venv
+
+# Activar el entorno virtual (Linux/macOS)
+source venv/bin/activate
+# En Windows usar: venv\Scripts\activate
+
+# Instalar dependencias
+pip install -r requirements.txt
+```
+
+---
+
+## 4. Ejecución / Modo de Uso
+
+Con el entorno virtual activo, ejecuta el archivo principal:
+
+```bash
 python3 main.py
+```
 
-El programa imprime la tabla comparativa (datos reales y los cuatro modelospor periodo) y muestra la grafica de las cinco series en una sola figura.
-5. Estructura del Proyecto
+El programa imprimirá la tabla comparativa (datos reales y los cuatro modelos por periodo) en la consola y desplegará una ventana con la gráfica de las cinco series en una sola figura.
 
-APE-02/├── README.md               → este archivo├── Reporte_Tecnico/        → reporte tecnico de la practica├── img/                    → capturas del funcionamiento└── Codigo/APE2_Simulacion/    ├── main.py             → punto de entrada del programa    ├── Modelo/             → poblacion.py: los cuatro modelos matematicos    ├── Vista/              → tabla.py y grafica.py: presentacion    └── Controlador/        → controlador.py: coordinacion MVC
+---
 
-6. Informacion Adicional
+## 5. Estructura del Proyecto
 
-Tabla de resultados:
+```text
+APE-02/
+├── README.md               → Este archivo
+├── Reporte_Tecnico/        → Reporte técnico de la práctica
+├── img/                    → Capturas del funcionamiento
+└── Codigo/
+    └── APE2_Simulacion/    
+        ├── main.py         → Punto de entrada del programa
+        ├── Modelo/         → poblacion.py: Lógica matemática
+        ├── Vista/          → tabla.py y grafica.py: Presentación
+        └── Controlador/    → controlador.py: Coordinación MVC
+```
 
-Tabla de resultados
+---
 
-Grafica comparativa:
 
-Grafica comparativa
-7. Declaracion de uso de IA
+## 6. Declaración de uso de IA
 
-En el desarrollo de esta practica se utilizo asistencia de IA generativa(Claude, de Anthropic) como apoyo. Distribucion del aporte:
-Actividad	Responsable
-Enunciado, decisiones de diseno y estructura MVC	Estudiante
-Revisión Del Código 	IA, con direccion del estudiante
-Creacion de archivos, ejecucion y verificacion	Estudiante
-Comprension del codigo para sustento	Estudiante
-  
-Prompts utilizados (clic para ver)
-"Necesito que me ayudes revisando este APE fue algo similar al APE01 que realizamos, el mismo patron de diseño, asi que ayudame a revisar si puedo mejorar algo del código si hay alguna observación que tengas sobre el APE me avisas"  
+En el desarrollo de esta práctica se utilizó asistencia de IA generativa (Claude, de Anthropic) como herramienta de apoyo. 
+
+**Distribución del aporte:**
+
+| Actividad | Responsable |
+| :--- | :--- |
+| Enunciado, decisiones de diseño y estructura MVC | Estudiante |
+| Revisión del código | IA, con dirección del estudiante |
+| Creación de archivos, ejecución y verificación | Estudiante |
+| Comprensión del código para sustento | Estudiante |
+
+<details>
+<summary><b>💬 Ver Prompts utilizados (Clic para desplegar)</b></summary>
+<br>
+
+> *"Necesito que me ayudes revisando este APE fue algo similar al APE01 que realizamos, el mismo patron de diseño, asi que ayudame a revisar si puedo mejorar algo del código si hay alguna observación que tengas sobre el APE me avisas"*
+
+</details>
