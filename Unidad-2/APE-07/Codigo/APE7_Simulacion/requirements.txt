@@ -1,0 +1,2 @@
+# APE-07: solo se usa la biblioteca estándar de Python (csv, math, time, argparse).
+# No se requieren dependencias externas: la guía de esta práctica no pide gráficas.
