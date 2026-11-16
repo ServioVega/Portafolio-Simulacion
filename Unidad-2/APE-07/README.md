@@ -17,7 +17,7 @@ obtenidos en Python y Java.
 **Nota de estructura:** a diferencia de los APE anteriores, esta práctica no
 requiere Vista (no se generan gráficas ni GUI); la «pequeña tabla» para
 visualizar los datos se imprime en consola y los resultados completos se
-exportan en CSV a `Resultados/`.
+exportan en CSV a `Resultados`.
 
 ---
 
